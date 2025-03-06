@@ -15,13 +15,20 @@ export const todoSlice = createSlice({
 		}
 		state.todos.push(todo)
 	},
+	updateTodo:(state , action) => {
+		const {id, text} = action.payload;
+		const todo = state.todos.find((todo) => todo.id === id);
+		if (todo){
+			todo.text = text
+		}
+	},
 	removeTodo: (state , action)=>{
 		state.todos = state.todos.filter((todo) => todo.id !== action.payload)
 	},		
 	}
 })
 
-export const{addTodo,removeTodo} = todoSlice.actions
+export const{addTodo,removeTodo,updateTodo} = todoSlice.actions
 
 export default   todoSlice.reducer
 // payload is an object u can extract anything in payload
