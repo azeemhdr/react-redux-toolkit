@@ -34,6 +34,8 @@ addTodo: (state , action) => {}
 12. to use the component we use "useSelector React method".
 13. for sending data to store use "useDispatch method", for using data from store use "useSelect Method".
 
+14. every application has a single store which is "single source of truth"
+
 ## short method for store recognization.
 reducer:{
 		[todoSlice.name]: todoSlice.reducer
