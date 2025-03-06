@@ -1,7 +1,12 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit'; 
+import todoReducer from './features/todo/todoSlice';
+
+export const store = configureStore({
+	reducer: todoReducer
+
+})
 
 
-export const store = configureStore({})
 /* notes: 
 ------------
 1. firstly to step-up a store we have to import {configureStore} from redux toolkit, to configure the store.
@@ -25,4 +30,12 @@ addTodo: (state , action) => {}
 	*state give you access to the initialState.
 	*action give you access to get the values.
 } 
+11. To store something in "store" you have to send/dispatch it by using "dispatch react method". dispatch method change the value in store by using reducer.  	
+12. to use the component we use "useSelector React method".
+13. for sending data to store use "useDispatch method", for using data from store use "useSelect Method".
+
+## short method for store recognization.
+reducer:{
+		[todoSlice.name]: todoSlice.reducer
+	}
 */

@@ -23,8 +23,7 @@ export const todoSlice = createSlice({
 
 export const{addTodo,removeTodo} = todoSlice.actions
 
-export default todoSlice.reducer
-
+export default   todoSlice.reducer
 // payload is an object u can extract anything in payload
 
 // u have too export it twice to use every where in components.
