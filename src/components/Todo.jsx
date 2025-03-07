@@ -7,14 +7,14 @@ export default function Todo() {
   const [editId, setEditId] = useState();
   const [editText, setEditText] = useState("");
 
-  const editHandler = (todo) => {
-    setEditId(todo.id);
-    setEditText(todo.text);
+  const editHandler = (e) => {
+    setEditId(e.id);
+    setEditText(e.text);
   };
 
   const updateHandler = () => {
     dispatch(updateTodo({ id: editId, text: editText }));
-    setEditId(null);
+    setEditId();
     setEditText("");
   };
 
@@ -36,7 +36,8 @@ export default function Todo() {
 			  {item.text}
 			</div>
 		  )}
-           <div className="flex gap-2">
+		  
+           <div className="flex gap-1">
 			  {editId === item.id ? (
 				<button onClick={updateHandler} className="bg-green-600 text-white px-2 rounded">
 				  Update
